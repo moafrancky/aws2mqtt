@@ -8,8 +8,8 @@ MQTT_PASS=${MQTT_PASS:-pass}
 
 awscliversion="$(aws --version | awk '{print $1}' | awk -F / '{print $2}')"
 monthtodatecostresult="$(aws ce get-cost-and-usage --time-period Start=$(date +'%Y-%m-01'),End=$(date +'%Y-%m-01' -d next-month) --granularity MONTHLY --metrics BlendedCost)"
-monthtodatecostamount="$(echo $(echo ${monthtodatecostresult} | jq -r '.ResultsByTime[0].Total.BlendedCost.Amount'))"
-monthtodatecostunit="$(echo $(echo ${monthtodatecostresult} | jq -r '.ResultsByTime[0].Total.BlendedCost.Unit'))"
+monthtodatecostamount="$(echo ${monthtodatecostresult} | jq -r '.ResultsByTime[0].Total.BlendedCost.Amount')"
+monthtodatecostunit="$(echo ${monthtodatecostresult} | jq -r '.ResultsByTime[0].Total.BlendedCost.Unit')"
 
 echo "$(date -Iseconds) aws-cli version ${awscliversion}"
 echo "$(date -Iseconds) month-to-date amount ${monthtodatecostamount}"
