@@ -1,6 +1,6 @@
 #!/bin/bash
 MQTT_HOST=${MQTT_HOST:-localhost}
-MQTT_ID=${MQTT_ID:-awscli2mqtt}
+MQTT_ID=${MQTT_ID:-aws2mqtt}
 MQTT_TOPIC=${MQTT_TOPIC:-aws}
 MQTT_OPTIONS=${MQTT_OPTIONS:-"-r"}
 MQTT_USER=${MQTT_USER:-user}
