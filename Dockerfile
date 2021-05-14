@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:edge
 
 RUN apk update && apk upgrade && apk add bash mosquitto-clients python3 py3-pip dcron libcap jq coreutils
 RUN pip3 install --upgrade pip && \
