@@ -1,7 +1,7 @@
 FROM alpine:latest
 
-RUN apk update && apk upgrade && apk add bash mosquitto-clients python3 py3-pip dcron libcap jq coreutils && \
-    pip3 install --upgrade pip && \
+RUN apk update && apk upgrade && apk add bash mosquitto-clients python3 py3-pip dcron libcap jq coreutils
+RUN pip3 install --upgrade pip && \
     pip3 install awscli && \
     rm -rf /var/cache/apk/*
 
